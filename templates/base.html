@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-    
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Immersive History</title>
-      <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    {% block content %}{% endblock %}
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-  </body>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immersive History</title>
+</head>
+
+<body>
+  {% block content %}{% endblock %}
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+
 </html>
