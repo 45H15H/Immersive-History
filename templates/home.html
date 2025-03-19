@@ -2,33 +2,72 @@
 {% block content %}
 
 <nav class="navbar">
-    <div class="container">
-        <h1 class="logo">Immersive History</h1>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Stories</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
+    <div class="navbar-container">
+      <a href="/" class="logo">MyWebsite</a>
+      <ul class="navbar-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
     </div>
 </nav>
-<div class="slideshow">
-    <div class="slides">
-        <div class="slide"><img src="https://wallpaperaccess.com/full/2497033.jpg" alt="Slide 1"></div>
-        <div class="slide"><img src="https://assets.editorial.aetnd.com/uploads/2010/04/middle-ages-gettyimages-804452498.jpg?width=1920&quality=75" alt="Slide 2"></div>
-        <div class="slide"><img src="https://th.bing.com/th/id/OIP.k7XbJqzMuE5PlrVQtW0MggHaEu?rs=1&pid=ImgDetMain" alt="Slide 3"></div>
+
+    <div class="carousel">
+        <div class="carousel-item">
+            <div class="slide-image"
+                style="background-image: 
+url('https://wallpaperaccess.com/full/2497033.jpg');">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="slide-image"
+                style="background-image: 
+url('https://assets.editorial.aetnd.com/uploads/2010/04/middle-ages-gettyimages-804452498.jpg?width=1920&quality=75');">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="slide-image"
+                style="background-image: 
+url('https://th.bing.com/th/id/OIP.k7XbJqzMuE5PlrVQtW0MggHaEu?rs=1&pid=ImgDetMain');">
+            </div>
+        </div>
     </div>
 </div>
+
+<section>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col custom-left-card">
+        <div class="card custom-card h-100">
+          <img src="https://th.bing.com/th/id/R.63d6c5a344336de3053f811282e2090b?rik=elmdfF1JH9YUOw&riu=http%3a%2f%2fwww.lodgeseshat.nl%2fwp-content%2fuploads%2f2023%2f10%2fhistory-featured-image.jpg&ehk=P%2fOf6gBi8ZWKbDI9WJyK36q9Xy29cQ2zHrkUdbAGQKo%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card custom-card h-100">
+          <img src="https://th.bing.com/th/id/R.63d6c5a344336de3053f811282e2090b?rik=elmdfF1JH9YUOw&riu=http%3a%2f%2fwww.lodgeseshat.nl%2fwp-content%2fuploads%2f2023%2f10%2fhistory-featured-image.jpg&ehk=P%2fOf6gBi8ZWKbDI9WJyK36q9Xy29cQ2zHrkUdbAGQKo%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card custom-card h-100">
+          <img src="https://th.bing.com/th/id/R.63d6c5a344336de3053f811282e2090b?rik=elmdfF1JH9YUOw&riu=http%3a%2f%2fwww.lodgeseshat.nl%2fwp-content%2fuploads%2f2023%2f10%2fhistory-featured-image.jpg&ehk=P%2fOf6gBi8ZWKbDI9WJyK36q9Xy29cQ2zHrkUdbAGQKo%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 <script>
-    let currentIndex = 0;
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slide').length;
-
-    function showNextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    setInterval(showNextSlide, 2000);
 </script>
 
 {% endblock %}
