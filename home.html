@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersive History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Immersive History</h1>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Stories</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="slideshow">
+        <div class="slides">
+            <div class="slide"><img src="https://wallpaperaccess.com/full/2497033.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="https://assets.editorial.aetnd.com/uploads/2010/04/middle-ages-gettyimages-804452498.jpg?width=1920&quality=75" alt="Slide 2"></div>
+            <div class="slide"><img src="https://th.bing.com/th/id/OIP.k7XbJqzMuE5PlrVQtW0MggHaEu?rs=1&pid=ImgDetMain" alt="Slide 3"></div>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+    
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    
+        setInterval(showNextSlide, 2000);
+    </script>
+</body>
+</html>
