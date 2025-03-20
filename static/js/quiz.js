@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadQuiz = () => {
         if (currentQuiz >= quizData.length) {
             quizContainer.innerHTML = `<h2>You answered ${score}/${quizData.length} correctly!</h2>
-                                       <button onclick="location.reload()">Play Again</button>`;
+                                       <button class="play-again-button" onclick="location.reload()">Play Again</button>`;
             return;
         }
 
