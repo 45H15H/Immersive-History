@@ -1,40 +1,196 @@
+/* Base styling */
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to right, #F4F1EB, #E8D8B7); /* Soft gradient background */
+    color: #3E3B31; /* Dark brown for text */
+    margin: 0;
+    padding: 0;
+}
 
-/* WELCOME */
-.welcome-title {
-    text-align: center;
-    font-size: 2.5em;
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Ensure it is above other content */
+}
+
+.back-link {
+    font-size: 1.2rem;
+    color: #8A5D3B;
     font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    text-decoration: none;
+    background-color: #FFF8E1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.welcome-subtitle {
-    font-size: 1.5em;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.back-link:hover {
+    background-color: #E8D8B7;
+    transform: translateY(-3px);
+}
+
+.back-link:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(138, 93, 59, 0.4);
+}
+
+/* Welcome title styling */
+.welcome-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #8A5D3B; /* Warm, brownish tone */
     text-align: center;
+    margin-top: 50px;
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for dramatic effect */
+    letter-spacing: 3px; /* Slightly spread out letters for added elegance */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
+    text-transform: uppercase; /* Make the title stand out */
 }
-/* WELCOME */
 
-/* PROMPT */
+/* Welcome subtitle styling */
+.welcome-subtitle {
+    font-size: 1.7rem;
+    color: #7E6A57; /* Muted, warm brown */
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Form styling */
 .prompt-form {
-    display: grid;
-    justify-content: center;
-    margin-top: 20px;
+    background: rgba(255, 248, 225, 0.9); /* Slightly transparent parchment color */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    max-width: 500px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-/* PROMPT */
 
-/* RESPONSE */
+.prompt-form:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Lift the form on hover */
+}
+
+.prompt-form label {
+    font-size: 1.1rem;
+    color: #3E3B31;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.prompt-form .input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px; /* Added margin for spacing */
+}
+
+.prompt-form input {
+    width: 70%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #C1A182;
+    border-radius: 30px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.prompt-form input:focus {
+    border-color: #8A5D3B;
+    box-shadow: 0 0 10px rgba(138, 93, 59, 0.5);
+    transform: scale(1.02);
+}
+
+.prompt-form button {
+    background-color: #8A5D3B;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+}
+
+.prompt-form button:hover {
+    background-color: #6A432B;
+    transform: translateY(-4px); /* Button lifts when hovered */
+}
+
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3),
+.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,
+.input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select,
+.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+    border-top-right-radius: 30px !important;
+    border-bottom-right-radius: 30px !important;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    border-top-left-radius: 30px !important;
+    border-bottom-left-radius: 30px !important;
+}
+
+/* Response container */
 .response-container {
-    justify-content: center;
-    margin-top: 20px;
-    display: grid;
+    margin-top: 50px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
 }
 
+/* Response text styling */
 #response-text {
-    justify-content: center;
-    width: 500px;
-    height: 200px;
-    resize: none; /* Prevents resizing */
+    width: 80%;
+    min-height: 200px;
+    font-size: 1.2rem;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #C1A182;
+    background-color: #FFF8E1;
+    color: #3E3B31;
+    resize: none;
+    outline: none;
+    overflow-y: auto;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Georgia', serif; /* Matching typography */
 }
-/* RESPONSE */
+
+#response-text:focus {
+    border-color: #8A5D3B;
+    box-shadow: 0 0 10px rgba(138, 93, 59, 0.5);
+}
+
+audio {
+    margin-top: 30px;
+    border-radius: 15px;
+    width: 80%;
+    background-color: #E8D8B7;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+audio:hover {
+    background-color: #D1C0A1; /* Slightly darker background on hover */
+}
+
+/* Keyframe animation for fading in elements */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -7,6 +7,10 @@
 
 {% block content %}
 
+<div class="back-button">
+    <a href="{{ url_for('home') }}" class="back-link">← Back to Home</a>
+</div>
+
 <!-- Welcome title and subtitle -->
 <div>
     <h1 class="welcome-title">Storyteller</h1>
@@ -16,19 +20,19 @@
 <!-- Form for prompt -->
 <div>
     <form method="post" class="prompt-form">
-        <h3>Try it now!</h3>
         <label for="key">What do you want to learn about?</label>
-        <br>
-        <input type="text" name="prompt" placeholder="Enter a prompt" required>
-        <br>
-        <button type="submit">Submit</button>
+        <div class="input-group">
+            <input type="text" name="prompt" placeholder="Enter a prompt" required>
+            <button type="submit">Submit</button>
+        </div>
         {% if error %}
         <p class="error">Field can't be empty!!!</p>
         {% endif %}
-    </form>
+    </form>    
 </div>
 
 <!-- Response -->
+{% if response %}
 <div class="response-container">
     <textarea id="response-text" readonly>{{ response }}</textarea>
     <br>
@@ -39,6 +43,7 @@
     </audio>
     {% endif %}
 </div>
+{% endif %}
 
 
 

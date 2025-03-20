@@ -1,15 +1,15 @@
 /* Custom Navbar Styling */
 .navbar {
-    background-color: #333; /* Set a dark background color */
-    padding: 15px 30px; /* Add padding to the navbar */
-    position: sticky; /* Make the navbar sticky at the top */
-    top: 0; /* Stay at the top of the page */
-    z-index: 1000; /* Ensure it stays above other elements */
+    background-color: #3e2723 !important; /* Dark Chestnut Brown for a rich, historical feel */
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between; /* Space between logo and navbar links */
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -17,11 +17,11 @@
 
 .logo {
     font-size: 1.75rem;
-    color: #fff;
+    color: #d7ccc8 !important; /* Light Tan for a vintage, soft contrast */
     text-decoration: none;
     font-weight: bold;
-    margin-right: 50px; /* Increase space between logo and links */
-    padding-left: 0; /* Ensure no additional padding on the left */
+    margin-right: 50px;
+    padding-left: 0;
 }
 
 .navbar-links {
@@ -29,7 +29,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    margin-left: auto; /* Push navbar links to the right */
+    margin-left: auto;
 }
 
 .navbar-links li {
@@ -38,13 +38,21 @@
 
 .navbar-links li a {
     text-decoration: none;
-    color: #fff;
+    color: #d7ccc8 !important; /* Light Tan to match logo */
     font-size: 1rem;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-links li a:hover {
-    color: #00bcd4; /* Change color on hover */
+    color: #b5724e !important; /* Rust color for hover effect (warm reddish-brown) */
+    transform: scale(1.05); /* Slight scale effect for interactivity */
+}
+
+.navbar-links li a:focus,
+.navbar-links li a:active {
+    color: #b5724e !important; /* Same color as hover effect for consistency */
+    outline: none;
 }
 
 /* Responsive Design for Smaller Screens */
@@ -57,7 +65,7 @@
     .navbar-links {
         flex-direction: column;
         margin-top: 15px;
-        margin-left: 0; /* Center navbar links on small screens */
+        margin-left: 0;
     }
 
     .navbar-links li {
@@ -65,19 +73,17 @@
     }
 }
 
-  
 .carousel {
     position: relative;
-    width: 100vw;   /* Full viewport width */
-    height: 100vh;  /* Full viewport height */
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    background-color: #cdcdcd;
 }
 
 .carousel-item {
     position: absolute;
-    width: 100%;  /* Full width of the carousel */
-    height: 100%; /* Full height of the carousel */
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 100%;
     transition: all 0.3s ease-out;
@@ -88,22 +94,22 @@
 }
 
 .carousel-item img {
-    width: 100%; /* Ensures the image stretches across the container width */
-    height: 600px; /* Adjusts the height of the image */
-    object-fit: cover; /* Ensures the image covers the container while maintaining its aspect ratio */
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
 }
 
 .slide-image {
-    width: 100%;  /* Cover the full width */
-    height: 100%; /* Cover the full height */
-    object-fit: cover;  /* Cover the entire area without distortion */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     background-size: cover;
     background-position: center;
 }
 
 @media only screen and (max-width: 768px) {
     .carousel {
-        height: 100vh; /* Keep full screen on smaller devices */
+        height: 100vh;
     }
     .slide-image {
         object-fit: cover;
@@ -112,27 +118,27 @@
 
 @media only screen and (max-width: 480px) {
     .carousel {
-        height: 100vh; /* Keep full screen on mobile devices */
+        height: 100vh;
     }
     .slide-image {
         object-fit: cover;
     }
 }
 
-
 /* Custom Styling for Cards */
 .card {
-    min-height: 350px; /* Increases the card height */
-    margin-bottom: 20px; /* Adds space between cards */
+    min-height: 350px;
+    margin-bottom: 20px;
 }
 
 .custom-card {
     border: none;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 85%; /* Adjusted width to decrease the card size */
-    margin: 20px auto 0; /* Added top margin */
+    width: 85%;
+    margin: 20px auto 0;
+    background-color: #d7ccc8 !important; /* Light Tan for card background */
 }
 
 .custom-card:hover {
@@ -143,23 +149,24 @@
 .custom-card .card-img-top {
     border-radius: 15px 15px 0 0;
     object-fit: cover;
-    height: 200px; /* Adjust the image height */
+    height: 200px;
 }
 
 .custom-card .card-body {
     padding: 20px;
+    background-color: #e7d5b2 !important; /* Soft Cream for card body */
 }
 
 .custom-card .card-title {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #333;
+    color: #3e2723 !important; /* Dark Chestnut for historical richness */
     margin-bottom: 10px;
 }
 
 .custom-card .card-text {
     font-size: 1rem;
-    color: #555;
+    color: #4b3f72 !important; /* Dark brown for text */
     line-height: 1.5;
 }
 
@@ -171,7 +178,7 @@
 @media (max-width: 768px) {
     .custom-card {
         margin-bottom: 20px;
-        width: 100%; /* Full width on smaller screens */
+        width: 100%;
     }
 
     .custom-left-card {
@@ -179,18 +186,28 @@
     }
 }
 
+/* Custom Primary Background */
+.bg-primary {
+    background-color: #3e2723 !important;  /* Dark Chestnut Brown */
+}
+
+/* Hero Section Styling */
 .hero-section {
     background-image: url('hero-background.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
     color: white;
+    background-color: rgba(62, 39, 35, 0.6); /* Dark Chestnut Overlay */
 }
+
 .hero-section h1 {
     font-size: 3rem;
     margin-bottom: 20px;
 }
+
 .hero-section p {
     font-size: 1.25rem;
     margin-bottom: 20px;
 }
+
