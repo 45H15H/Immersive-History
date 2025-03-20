@@ -39,16 +39,28 @@ body {
 
 /* Welcome title styling */
 .welcome-title {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 3rem; /* Large text size */
+    font-weight: bold; /* Bold text */
     color: #8A5D3B; /* Warm, brownish tone */
-    text-align: center;
-    margin-top: 50px;
+    text-align: center; /* Centered text */
+    margin-top: 50px; /* Space from the top */
     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for dramatic effect */
     letter-spacing: 3px; /* Slightly spread out letters for added elegance */
     animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
-    text-transform: uppercase; /* Make the title stand out */
-}
+    text-transform: uppercase; /* Make the text uppercase */
+  }
+  
+  /* Keyframe animation for fading in */
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }  
 
 /* Welcome subtitle styling */
 .welcome-subtitle {

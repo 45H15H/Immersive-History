@@ -1,51 +1,160 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f6f2; /* Off-white for a historical feel */
+    margin: 0;
+    padding: 0;
+}
+
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Ensure it is above other content */
+  }
+  
+  .back-link {
+    font-size: 1.2rem;
+    color: #8A5D3B;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #FFF8E1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .back-link:hover {
+    background-color: #E8D8B7;
+    transform: translateY(-3px);
+  }
+  
+  .back-link:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(138, 93, 59, 0.4);
+  }
+
+.welcome-title {
+    font-size: 3rem; /* Large text size */
+    font-weight: bold; /* Bold text */
+    color: #8A5D3B; /* Warm, brownish tone */
+    text-align: center; /* Centered text */
+    margin-top: 50px; /* Space from the top */
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for dramatic effect */
+    letter-spacing: 3px; /* Slightly spread out letters for added elegance */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
+    text-transform: uppercase; /* Make the text uppercase */
+  }
+  
+  /* Keyframe animation for fading in */
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
+/* Chat container */
 .chat-container {
-    width: 600px;
-    margin: 20px auto;
-    border: 1px solid #ccc;
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Chat history */
 .chat-history {
-    height: 300px;
+    max-height: 400px;
     overflow-y: auto;
-    border: 1px solid #eee;
-    padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
+/* User message */
 .user-message {
-    background-color: #e0f7fa;
-    padding: 8px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    text-align: right;
+    background-color: #f0e6d6;  /* Light beige, aged paper effect */
+    color: #4a3c29;  /* Dark brown text for better readability */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace; /* Gives it a more 'historical' feel */
 }
 
+/* Bot message */
 .bot-message {
-    background-color: #f0f0f0;
-    padding: 8px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    text-align: left;
+    background-color: #f8f2e3;  /* Light cream color */
+    color: #6a4f33;  /* Slightly muted brown for the bot */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
 }
 
-.chat-container form {
+/* Message text */
+strong {
+    font-weight: bold;
+}
+
+/* Input form */
+form {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
-.chat-container input[type="text"] {
-    flex-grow: 1;
-    padding: 8px;
+input[type="text"] {
+    width: 85%;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f1f0e3; /* Light cream for input box */
+    color: #5b4d2e; /* Dark brown text for the input */
+    box-sizing: border-box;
 }
 
-.chat-container button {
-    padding: 8px 15px;
-    background-color: #4caf50;
+button {
+    padding: 12px 15px;
+    background-color: #8f7b56; /* Warm brown */
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #736149; /* Darker brown on hover */
+}
+
+/* Additional styling for responsiveness */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 95%;
+    }
+
+    input[type="text"] {
+        width: 75%;
+    }
+
+    button {
+        width: 20%;
+    }
+}
+
+/* Smooth scrolling for chat history */
+.chat-history {
+    max-height: 400px; /* Or any desired height */
+    overflow-y: auto; /* Allow vertical scrolling */
+    margin-bottom: 20px;
+    scroll-behavior: smooth; /* Smooth scrolling when we move the scrollbar */
 }

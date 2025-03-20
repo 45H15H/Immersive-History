@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
         messageDiv.classList.add("message", role === "user" ? "user-message" : "bot-message");
         messageDiv.textContent = text;
         chatBox.appendChild(messageDiv);
+
+        // Scroll to the bottom of the chat box
         chatBox.scrollTop = chatBox.scrollHeight;
     }
 
@@ -37,4 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
     userInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") sendMessage();
     });
+
+    // Remove redundant MutationObserver and scroll logic
 });
