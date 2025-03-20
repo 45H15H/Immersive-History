@@ -1,30 +1,161 @@
-.flowchart-container {
-    width: 80%;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #F4F1EB, #E8D8B7);
+    color: #3E3B31;
+    margin: 0;
+    padding: 0;
 }
 
-.flowchart-container form {
+.welcome-title {
+    font-size: 3rem; /* Large text size */
+    font-weight: bold; /* Bold text */
+    color: #8A5D3B; /* Warm, brownish tone */
+    text-align: center; /* Centered text */
+    margin-top: 50px; /* Space from the top */
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for dramatic effect */
+    letter-spacing: 3px; /* Slightly spread out letters for added elegance */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
+    text-transform: uppercase; /* Make the text uppercase */
+  }
+  
+  /* Keyframe animation for fading in */
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }  
+
+h1, h2 {
+    color: #8A5D3B;
+    text-align: center;
+}
+
+h2 {
+    color: #7E6A57;
+}
+
+/* Flowchart container */
+.flowchart-container {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+/* Form styles */
+
+form {
+    display: flex;
+    justify-content: center; /* Center the input and button horizontally */
+    align-items: center; /* Align them vertically in the middle */
+    gap: 10px; /* Space between the input and button */
     margin-bottom: 20px;
 }
 
-.flowchart-container input[type="text"] {
-    padding: 8px;
-    width: 70%;
-    margin-right: 10px;
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    border: 2px solid #C1A182;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-.flowchart-container button {
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
+input[type="text"]:focus {
+    outline: none;
+    border-color: #8A5D3B;
+}
+
+/* Button styles */
+button {
+    background-color: #8A5D3B;
+    color: #FFF8E1;
+    padding: 12px 20px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px !important;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.flowchart-container .mermaid {
+button:hover {
+    background-color: #7B5E4D;
+}
+
+/* Download buttons */
+/* Center the download buttons */
+.flowchart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.download-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Adjust margin if needed */
+}
+
+#download-png, #download-jpeg {
+    background-color: #8A5D3B;
+    color: #FFF8E1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ensure the buttons align next to each other */
+}
+
+/* Additional alignment adjustment */
+.flowchart-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#download-png:hover, #download-jpeg:hover {
+    background-color: #7B5E4D;
+}
+
+/* Back link button */
+a.back-link {
+    background-color: #FFF8E1;
+    color: #8A5D3B;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
     text-align: center;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+a.back-link:hover {
+    background-color: #E8D8B7;
+}
+
+/* Error message */
+.error-message {
+    color: #FF3E36;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Mermaid flowchart styles */
+.mermaid {
+    border: 2px solid #C1A182;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #F0E0C8;
 }

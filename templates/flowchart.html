@@ -5,20 +5,25 @@
 {% endblock %}
 
 {% block content %}
+<div>
+    <h1 class="welcome-title">FlowChart</h1>
+</div>
 <div class="flowchart-container">
-    <h1>Flowchart Generator</h1>
+    
     <form method="POST" action="{{ url_for('flowchart') }}">
         <input type="text" name="topic" placeholder="Enter a topic..." required>
-        <button type="submit">Generate Flowchart</button>
+        <button type="submit">Generate</button>
     </form>
     {% if flowchart_code %}
-    <h2>Flowchart:</h2>
     {% if "graph" in flowchart_code %}
     <div class="mermaid" id="mermaid-container">
         {{ flowchart_code }}
     </div>
-    <button id="download-png">Download PNG</button>
-    <button id="download-jpeg">Download JPEG</button>
+    <div class="download-buttons">
+        <button id="download-png">Download PNG</button>
+        <button id="download-jpeg">Download JPEG</button>
+    </div>
+    
     {% else %}
     <p>{{ flowchart_code }}</p>
     {% endif %}
