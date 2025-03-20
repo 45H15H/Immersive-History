@@ -17,6 +17,12 @@ import logging
 from google.genai.types import Content  # Import the correct type
 # Flowchart imports
 import mermaid
+# Deepgram imports
+from deepgram.utils import verboselogs
+from deepgram import (
+    DeepgramClient,
+    SpeakOptions,
+)
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -24,7 +30,9 @@ logging.basicConfig(level=logging.DEBUG)
 load_dotenv()
 
 # Get the API key from environment variables
-story_instruct="You are historian and you have to write a story about what the users says. You can start the story with 'Once upon a time, there was a' and then continue the story with the user's input. You can end the story with 'The end'. Write the story in only 50 words."
+story_instruct="""You are historian and you have to write a story about what the users says. 
+You can start the story with 'Once upon a time, there was a' and then continue the story with the user's input. 
+You can end the story with 'The end'."""
 gemini_api_key = os.getenv('GEMINI_API_KEY')
 gemini_client = genai.Client(api_key=gemini_api_key)
 
@@ -46,17 +54,18 @@ def generate_story(prompt):
     return response.text
 
 def generate_story_audio(story):
-    audio = elevenlabs_client.text_to_speech.convert(
-    text=story,
-    voice_id="JBFqnCBsd6RMkjVDRZzb",
-    model_id="eleven_multilingual_v2",
-    output_format="mp3_44100_128",
-    )
-    audio_data = BytesIO()
-    for chunk in audio:
-        audio_data.write(chunk)
-    
-    return base64.b64encode(audio_data.getvalue()).decode("utf-8") 
+    # trim the story to less than 2000 characters
+    story = story[:1999]
+    try:
+        SPEAK_TEXT = {"text": story}
+        deepgram = DeepgramClient()
+        options = SpeakOptions(
+            model="aura-asteria-en",
+        )
+        response = deepgram.speak.rest.v("1").save("static/audio/output.mp3", SPEAK_TEXT, options)
+        print(response.to_json(indent=4))
+    except Exception as e:
+        print(f"Exception: {e}")
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -67,7 +76,7 @@ def storyterller():
     if request.method == 'POST':
         prompt = request.form.get('prompt')
         response = generate_story(prompt)
-        # audio = generate_story_audio(response)
+        audio = generate_story_audio(response)
         if response:
             # Generate Base64 audio to embed in HTML
             # audio_base64 = generate_story_audio(audio)
