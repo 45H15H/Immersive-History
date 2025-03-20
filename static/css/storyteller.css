@@ -91,7 +91,6 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    margin-bottom: 15px; /* Added margin for spacing */
 }
 
 .prompt-form input {
@@ -99,7 +98,7 @@ body {
     padding: 12px;
     font-size: 1rem;
     border: 2px solid #C1A182;
-    border-radius: 30px;
+    border-radius: 5px;
     box-sizing: border-box;
     outline: none;
     transition: all 0.3s ease;
@@ -117,7 +116,7 @@ body {
     border: none;
     padding: 14px 30px;
     font-size: 1.1rem;
-    border-radius: 30px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-weight: 600;
@@ -132,13 +131,13 @@ body {
 .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-control,
 .input-group:not(.has-validation)>.form-floating:not(:last-child)>.form-select,
 .input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
-    border-top-right-radius: 30px !important;
-    border-bottom-right-radius: 30px !important;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
 }
 
 .input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-    border-top-left-radius: 30px !important;
-    border-bottom-left-radius: 30px !important;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
 }
 
 /* Response container */
@@ -154,7 +153,7 @@ body {
     min-height: 200px;
     font-size: 1.2rem;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 5px;
     border: 2px solid #C1A182;
     background-color: #FFF8E1;
     color: #3E3B31;

@@ -7,25 +7,29 @@
 
 {% block content %}
 
+<div class="back-button">
+  <a href="{{ url_for('home') }}" class="back-link">← Back to Home</a>
+</div>
+
 <!-- Welcome title and subtitle -->
 <div>
-    <h1 class="welcome-title">quiz</h1>
+    <h1 class="welcome-title">QUIZ</h1>
     <p class="welcome-subtitle">Here you can play a quiz!</p>
 </div>
 
 <!-- Form for prompt -->
 <div>
-    <form method="post" class="quiz-form">
-        <h3>Try it now!</h3>
-        <label for="key">What topic do you want to have a quiz?</label>
-        <br>
-        <input type="text" name="topic" placeholder="Enter a topic" required>
-        <br>
-        <button type="submit">Submit</button>
-        {% if error %}
-        <p class="error">Field can't be empty!!!</p>
-        {% endif %}
-    </form>
+  <form method="post" class="quiz-form">
+      <label for="key">What topic do you want to have a quiz?</label>
+      <br>
+      <div class="quiz-input-group">
+          <input type="text" name="topic" placeholder="Enter a topic" required>
+          <button type="submit">Submit</button>
+      </div>
+      {% if error %}
+      <p class="error">Field can't be empty!!!</p>
+      {% endif %}
+  </form>
 </div>
 
 <!-- Response -->

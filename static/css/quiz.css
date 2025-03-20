@@ -1,80 +1,181 @@
+/* History-Themed Quiz CSS */
 
-/* WELCOME */
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to right, #F4F1EB, #E8D8B7); /* Soft gradient background */
+  color: #3E3B31; /* Dark brown for text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+.back-link {
+  font-size: 1.2rem;
+  color: #8A5D3B;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #FFF8E1;
+  padding: 10px 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #E8D8B7;
+  transform: translateY(-3px);
+}
+
+.back-link:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(138, 93, 59, 0.4);
+}
+
 .welcome-title {
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  font-size: 3rem; /* Large text size */
+  font-weight: bold; /* Bold text */
+  color: #8A5D3B; /* Warm, brownish tone */
+  text-align: center; /* Centered text */
+  margin-top: 50px; /* Space from the top */
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for dramatic effect */
+  letter-spacing: 3px; /* Slightly spread out letters for added elegance */
+  animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
+  text-transform: uppercase; /* Make the text uppercase */
+}
+
+/* Keyframe animation for fading in */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
 
 .welcome-subtitle {
-    font-size: 1.5em;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-size: 1.7rem;
+    color: #7E6A57; /* Muted, warm brown */
     text-align: center;
-}
-/* WELCOME */
-
-/* PROMPT */
-.prompt-form {
-    display: grid;
-    justify-content: center;
-    margin-top: 20px;
-}
-/* PROMPT */
-
-/* RESPONSE */
-.response-container {
-    justify-content: center;
-    margin-top: 20px;
-    display: grid;
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
-#response-text {
-    justify-content: center;
-    width: 500px;
-    height: 200px;
-    resize: none; /* Prevents resizing */
-}
-/* RESPONSE */
-
-/* QUIZ */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
-
-* {
-  box-sizing: border-box;
+.quiz-form {
+    background: rgba(255, 248, 225, 0.9); /* Slightly transparent parchment color */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    max-width: 500px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.response-container {
-  background-color: #b8c6db;
- 
-  font-family: "Poppins", sans-serif;
+.quiz-form h3, .quiz-form label {
+    font-size: 1.1rem;
+    color: #3E3B31;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.quiz-input-group {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
+  align-items: center;
+}
+
+.quiz-form input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #C1A182;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.quiz-form button {
+    background-color: #8A5D3B;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    margin-left: 17px;
+}
+
+.quiz-form button:hover {
+  background-color: #7b5e4d;
+}
+
+.error {
+  color: #ff3e36;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.response-container {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
 }
 
 .quiz-container {
-  background-color: #fff;
+  background-color: rgba(240, 224, 200, 0.9);
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-  width: 500px;
-  max-width: 95vw;
-  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .quiz-header {
-  padding: 1rem;
+  margin-bottom: 20px;
 }
 
-h2 {
-  padding: 1rem;
-  text-align: center;
-  margin: 0;
+.quiz-header h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.quiz-button {
+  background-color: #603913;
+  color: #f4f1ea;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-button:hover {
+  background-color: #7b5e4d;
+}
+
+label {
+  margin-left: 10px;
+  font-size: 1.1rem;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
 }
 
 ul {
@@ -82,32 +183,6 @@ ul {
   padding: 0;
 }
 
-ul li {
-  font-size: 1.2rem;
-  margin: 1rem 0;
-}
-
-ul li label {
-  cursor: pointer;
-}
-
-.quiz-button {
-  background-color: #7b339b;
-  color: #fff;
-  border: none;
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-family: inherit;
-  padding: 1.1rem;
-}
-
-button:hover {
-  background-color: #732d91;
-}
-
-button:focus {
-  outline: none;
-  background-color: #5e3370;
+li {
+  margin: 8px 0;
 }
