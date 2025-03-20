@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/storyteller.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Welcome title and subtitle -->
+<div>
+    <h1 class="welcome-title">Storyteller</h1>
+    <p class="welcome-subtitle">Here you can create your own stories!</p>
+</div>
+
+<!-- Form for prompt -->
+<div>
+    <form method="post" class="prompt-form">
+        <h3>Try it now!</h3>
+        <label for="key">What do you want to learn about?</label>
+        <br>
+        <input type="text" name="prompt" placeholder="Enter a prompt" required>
+        <br>
+        <button type="submit">Submit</button>
+        {% if error %}
+        <p class="error">Field can't be empty!!!</p>
+        {% endif %}
+    </form>
+</div>
+
+<!-- Response -->
+<div class="response-container">
+    <textarea id="response-text" readonly>{{ response }}</textarea>
+    <br>
+    {% if audio_base64 %}
+    <audio controls>
+        <source src="data:audio/mpeg;base64,{{ audio_base64 }}" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+</div>
+
+
+
+
+{% endblock %}
