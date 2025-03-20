@@ -127,16 +127,14 @@ body {
 }
 
 .play-again-button {
-  background-color: #8A5D3B;
-    color: white;
+    background-color: #603913;
+    color: #f4f1ea;
+    padding: 10px 20px;
     border: none;
-    padding: 14px 30px;
-    font-size: 1.1rem;
     border-radius: 5px;
+    margin-top: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-weight: 600;
-    margin-left: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .quiz-form button:hover {
@@ -189,7 +187,7 @@ body {
 
 label {
   margin-left: 10px;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 input[type="radio"] {
@@ -203,4 +201,16 @@ ul {
 
 li {
   margin: 8px 0;
+}
+
+.hidden-message-survived {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green; /* Or red for "eliminated" */
+}
+
+.hidden-message-eliminated {
+  margin-top: 10px;
+  font-weight: bold;
+  color: red; /* Or red for "eliminated" */
 }

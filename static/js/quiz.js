@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    console.log("Received Quiz Data:", quizData); // Debugging: Check received data
+    console.log("Received Quiz Data:", quizData);
 
     const quizContainer = document.getElementById("quiz");
     const questionElement = document.getElementById("question");
@@ -32,8 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const loadQuiz = () => {
         if (currentQuiz >= quizData.length) {
-            quizContainer.innerHTML = `<h2>You answered ${score}/${quizData.length} correctly!</h2>
-                                       <button class="play-again-button" onclick="location.reload()">Play Again</button>`;
+            let message = `<h2>You answered ${score}/${quizData.length} correctly!</h2>`;
+            if (score === quizData.length) {
+                message += `<p class="hidden-message-survived">Congratulations, player. You have survived.</p>`;
+            } else if (score === 0) {
+                message += `<p class="hidden-message-eliminated">You have been eliminated.</p>`;
+            }
+            message += `<button class="play-again-button" onclick="location.reload()">Play Again</button>`;
+            quizContainer.innerHTML = message;
             return;
         }
 
