@@ -121,6 +121,19 @@ body {
     margin-left: 10px;
 }
 
+.play-again-button {
+  background-color: #8A5D3B;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
 .quiz-form button:hover {
   background-color: #7b5e4d;
 }
