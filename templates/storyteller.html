@@ -36,12 +36,12 @@
 <div class="response-container">
     <textarea id="response-text" readonly>{{ response }}</textarea>
     <br>
-    {% if audio_base64 %}
+    
     <audio controls>
-        <source src="data:audio/mpeg;base64,{{ audio_base64 }}" type="audio/mp3">
+        <source src="{{ url_for('static', filename='audio/output.mp3') }}" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
-    {% endif %}
+    
 </div>
 {% endif %}
 
