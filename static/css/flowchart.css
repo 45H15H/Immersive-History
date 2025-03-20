@@ -58,7 +58,17 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-  }  
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.7rem;
+    color: #7E6A57; /* Muted, warm brown */
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
 
 h1, h2 {
     color: #8A5D3B;
@@ -86,16 +96,20 @@ form {
 }
 
 input[type="text"] {
-    padding: 10px;
-    width: 80%;
+    width: 70%;
+    padding: 12px;
+    font-size: 1rem;
     border: 2px solid #C1A182;
     border-radius: 5px;
-    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
 input[type="text"]:focus {
-    outline: none;
     border-color: #8A5D3B;
+    box-shadow: 0 0 10px rgba(138, 93, 59, 0.5);
+    transform: scale(1.02);
 }
 
 /* Button styles */

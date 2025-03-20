@@ -60,15 +60,30 @@ body {
     }
   }
 
+  .welcome-subtitle {
+    font-size: 1.7rem;
+    color: #7E6A57; /* Muted, warm brown */
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
 /* Chat container */
 .chat-container {
     width: 80%;
     max-width: 800px;
     margin: 30px auto;
-    background-color: #fff;
+    background-color: rgba(255, 248, 225, 0.9);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Lift the form on hover */
 }
 
 /* Chat history */
@@ -114,26 +129,30 @@ form {
 input[type="text"] {
     width: 85%;
     padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #f1f0e3; /* Light cream for input box */
-    color: #5b4d2e; /* Dark brown text for the input */
+    font-size: 1rem;
+    border: 2px solid #C1A182;
+    border-radius: 5px;
     box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
 button {
-    padding: 12px 15px;
-    background-color: #8f7b56; /* Warm brown */
+    background-color: #8A5D3B;
     color: white;
     border: none;
-    border-radius: 8px;
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px !important;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    margin-left: 10px;
 }
 
 button:hover {
-    background-color: #736149; /* Darker brown on hover */
+    background-color: #6A432B;
+    transform: translateY(-4px); /* Darker brown on hover */
 }
 
 /* Additional styling for responsiveness */

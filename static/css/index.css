@@ -80,6 +80,9 @@ body {
     overflow: hidden;
 }
 
+.carousel-caption{
+    font-size: medium;
+}
 .carousel-item {
     position: absolute;
     width: 100%;
