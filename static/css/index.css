@@ -237,12 +237,12 @@ body {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-1 * (1300px + 0px) * 3));
+      transform: translateX(calc(-1 * (1000px + 0px) * 3));
     }
   }
 
   .service-card {
-    width: 1300px;
+    width: 1000px;
     margin-bottom: 0px;
   }
 
