@@ -1,0 +1,40 @@
+
+/* WELCOME */
+.welcome-title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.welcome-subtitle {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* WELCOME */
+
+/* PROMPT */
+.prompt-form {
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* PROMPT */
+
+/* RESPONSE */
+.response-container {
+    justify-content: center;
+    margin-top: 20px;
+    display: grid;
+}
+
+#response-text {
+    justify-content: center;
+    width: 500px;
+    height: 200px;
+    resize: none; /* Prevents resizing */
+}
+/* RESPONSE */
