@@ -118,7 +118,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-weight: 600;
-    margin-left: 17px;
+    margin-left: 10px;
 }
 
 .quiz-form button:hover {

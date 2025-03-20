@@ -1,32 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<nav class="navbar navbar-expand-lg navbar-dark ">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Immersive History</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/storyteller">Story Teller</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/quiz">Quiz</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/chat">Chat</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/flowchart">Flowchart</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<nav class="navbar">
+    <div class="logo"> Immersive History </div>
+    <ul class="nav-links">
+        <li><a href="/"><b>HOME</b></a></li>
+        <li><a href="/storyteller"><b>STORY</b></a></li>
+        <li><a href="/quiz"><b>QUIZ</b></a></li>
+        <li><a href="/flowchart"><b>FLOWCHARTS</b></a></li>
+        <li><a href="/chat"><b>CHAT</b></a></li>
+    </ul>
 </nav>
 
 <!-- Slideshow -->

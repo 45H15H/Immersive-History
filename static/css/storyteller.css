@@ -99,10 +99,9 @@ body {
 }
 
 .prompt-form .input-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
+    display: inline-flex; /* Use flex to align items horizontally */
+    align-items: center;  /* Vertically center the items */
+    gap: 10px;
 }
 
 .prompt-form input {
@@ -132,6 +131,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-weight: 600;
+    margin-left: 10px;
 }
 
 .prompt-form button:hover {

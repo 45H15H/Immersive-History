@@ -7,6 +7,35 @@ body {
     padding: 0;
 }
 
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Ensure it is above other content */
+}
+
+.back-link {
+    font-size: 1.2rem;
+    color: #8A5D3B;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #FFF8E1;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #E8D8B7;
+    transform: translateY(-3px);
+}
+
+.back-link:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(138, 93, 59, 0.4);
+}
+
 .welcome-title {
     font-size: 3rem; /* Large text size */
     font-weight: bold; /* Bold text */
@@ -125,23 +154,6 @@ button:hover {
 
 #download-png:hover, #download-jpeg:hover {
     background-color: #7B5E4D;
-}
-
-/* Back link button */
-a.back-link {
-    background-color: #FFF8E1;
-    color: #8A5D3B;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-a.back-link:hover {
-    background-color: #E8D8B7;
 }
 
 /* Error message */
