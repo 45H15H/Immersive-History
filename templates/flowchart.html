@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/flowchart.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="flowchart-container">
+    <h1>Flowchart Generator</h1>
+    <form method="POST" action="{{ url_for('flowchart') }}">
+        <input type="text" name="topic" placeholder="Enter a topic..." required>
+        <button type="submit">Generate Flowchart</button>
+    </form>
+    {% if flowchart_code %}
+    <h2>Flowchart:</h2>
+    {% if "graph" in flowchart_code %}
+    <div class="mermaid" id="mermaid-container">
+        {{ flowchart_code }}
+    </div>
+    <button id="download-png">Download PNG</button>
+    <button id="download-jpeg">Download JPEG</button>
+    {% else %}
+    <p>{{ flowchart_code }}</p>
+    {% endif %}
+    {% endif %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas2image/1.0.5/canvas2image.min.js"></script>
+<script>
+    mermaid.initialize({ startOnLoad: true });
+    document.addEventListener('DOMContentLoaded', function() {
+        const downloadPngButton = document.getElementById('download-png');
+        const downloadJpegButton = document.getElementById('download-jpeg');
+        if(downloadPngButton && downloadJpegButton){
+            downloadPngButton.addEventListener('click', function() {
+                html2canvas(document.getElementById('mermaid-container')).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = 'flowchart.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                });
+            });
+
+            downloadJpegButton.addEventListener('click', function() {
+                html2canvas(document.getElementById('mermaid-container')).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = 'flowchart.jpeg';
+                    link.href = canvas.toDataURL('image/jpeg');
+                    link.click();
+                });
+            });
+        }
+    });
+</script>
+
+{% endblock %}

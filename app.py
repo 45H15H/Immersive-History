@@ -15,6 +15,8 @@ import base64
 # Chat imports
 import logging
 from google.genai.types import Content  # Import the correct type
+# Flowchart imports
+import mermaid
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -183,6 +185,39 @@ def chat():
             bot_response = generate_chat_response(user_input)
             return render_template('chat.html', user_input=user_input, bot_response=bot_response, chat_history=chat_history)
     return render_template('chat.html', chat_history=chat_history)
+
+flowchart_instruct = """You are a flowchart generator. Generate a flowchart in Mermaid syntax based on the user's topic.
+The flowchart should be simple and easy to understand.
+The flowchart should have at least 5 nodes.
+Return only the mermaid code.
+don't use ( and ) in the mermaid code. As it is wrong syntax.
+"""
+
+def generate_flowchart(topic):
+    response = gemini_client.models.generate_content(
+        model="gemini-2.0-flash",
+        config=types.GenerateContentConfig(system_instruction=flowchart_instruct),
+        contents=[topic]
+    )
+    # replace the ```mermaid from the response
+    response = response.text.replace("```mermaid", "")
+    response = response.replace("```", "")
+    print(response) #added print statement.
+    return response
+
+@app.route('/flowchart', methods=['GET', 'POST'])
+def flowchart():
+    if request.method == 'POST':
+        topic = request.form.get('topic')
+        flowchart_code = generate_flowchart(topic)
+        if flowchart_code:
+            if "graph" in flowchart_code: #basic check for valid mermaid code.
+                return render_template('flowchart.html', flowchart_code=flowchart_code)
+            else:
+                return render_template('flowchart.html', flowchart_code="The AI returned invalid mermaid code.")
+        else:
+            return render_template('flowchart.html', flowchart_code="The AI returned an empty response.")
+    return render_template('flowchart.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
