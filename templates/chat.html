@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+<div class="chat-container">
+    <h1>Chat with the Bot</h1>
+    <div class="chat-history">
+        {% for message in chat_history %}
+            {% if message.role == 'user' %}
+                <div class="user-message">
+                    <strong>You:</strong> {{ message.parts[0].text }}
+                </div>
+            {% elif message.role == 'model' %}
+                <div class="bot-message">
+                    <strong>Bot:</strong> {{ message.parts[0].text }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <form method="POST" action="{{ url_for('chat') }}">
+        <input type="text" name="user_input" placeholder="Type your message..." required>
+        <button type="submit">Send</button>
+    </form>
+</div>
+{% endblock %}

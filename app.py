@@ -12,7 +12,11 @@ from elevenlabs.client import ElevenLabs
 from elevenlabs import play
 from io import BytesIO
 import base64
+# Chat imports
+import logging
+from google.genai.types import Content  # Import the correct type
 
+logging.basicConfig(level=logging.DEBUG)
 
 # Load environment variables from .env file
 load_dotenv()
@@ -148,6 +152,37 @@ def quiz():
             return render_template('quiz.html', quiz_data=(quiz_data))
     return render_template('quiz.html')
 
+chat_instruct = """You are a helpful chatbot. Respond to the user's questions or statements in a conversational manner.
+Maintain context throughout the conversation. But keep the conversation only related to histroy. if the user asks about any other topic, bring back the conversation to history.
+"""
+
+chat_history = []  # Store conversation history
+
+def generate_chat_response(user_input):
+    global chat_history
+    chat_history.append(Content(parts=[{"text": user_input}], role="user"))
+
+    response = gemini_client.models.generate_content(
+        model="gemini-2.0-flash",
+        config=types.GenerateContentConfig(system_instruction=chat_instruct),
+        contents=chat_history
+    )
+
+    if response.text: # check if text exists
+        bot_response = response.text
+        chat_history.append(Content(parts=[{"text": bot_response}], role="model"))
+        return bot_response
+    else:
+        return "Sorry, I couldn't generate a response."
+
+@app.route('/chat', methods=['GET', 'POST'])
+def chat():
+    if request.method == 'POST':
+        user_input = request.form.get('user_input')
+        if user_input:
+            bot_response = generate_chat_response(user_input)
+            return render_template('chat.html', user_input=user_input, bot_response=bot_response, chat_history=chat_history)
+    return render_template('chat.html', chat_history=chat_history)
 
 if __name__ == '__main__':
     app.run(debug=True)
