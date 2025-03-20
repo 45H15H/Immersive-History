@@ -1,73 +1,109 @@
 {% extends "base.html" %}
 {% block content %}
 
-<nav class="navbar">
-    <div class="navbar-container">
-      <a href="/" class="logo">MyWebsite</a>
-      <ul class="navbar-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Immersive History</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#cards">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
-    <div class="carousel">
-        <div class="carousel-item">
-            <div class="slide-image"
-                style="background-image: 
-url('https://wallpaperaccess.com/full/2497033.jpg');">
+<!-- Slideshow -->
+<div id="historyCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://www.grunge.com/img/gallery/medical-procedures-that-existed-in-ancient-egypt/vascular-surgery-1640732684.jpg" class="d-block w-100" alt="History Image 1">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Explore Ancient Civilizations</h5>
+                <p>Learn about the fascinating stories of ancient empires and their impact on the modern world.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <div class="slide-image"
-                style="background-image: 
-url('https://assets.editorial.aetnd.com/uploads/2010/04/middle-ages-gettyimages-804452498.jpg?width=1920&quality=75');">
+            <img src="https://th.bing.com/th/id/OIP.Q9g4YSypjfR4bssq9H9qXwHaFA?rs=1&pid=ImgDetMain" class="d-block w-100" alt="History Image 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Interactive Storytelling</h5>
+                <p>Experience history through engaging narratives and interactive media.</p>
             </div>
         </div>
         <div class="carousel-item">
-            <div class="slide-image"
-                style="background-image: 
-url('https://th.bing.com/th/id/OIP.k7XbJqzMuE5PlrVQtW0MggHaEu?rs=1&pid=ImgDetMain');">
+            <img src="https://bitterbutterorg.files.wordpress.com/2017/10/claude_lorrain_010.jpg?w=768&h=568" class="d-block w-100" alt="History Image 3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Journey Through Time</h5>
+                <p>Take a journey through history's most pivotal moments and learn their significance.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#historyCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#historyCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Cards Section -->
+<div id="cards" class="container mt-5">
+    <h2 class="text-center mb-4">Our Features</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://th.bing.com/th/id/R.63d6c5a344336de3053f811282e2090b?rik=elmdfF1JH9YUOw&riu=http%3a%2f%2fwww.lodgeseshat.nl%2fwp-content%2fuploads%2f2023%2f10%2fhistory-featured-image.jpg&ehk=P%2fOf6gBi8ZWKbDI9WJyK36q9Xy29cQ2zHrkUdbAGQKo%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="Feature 1">
+                <div class="card-body">
+                    <h5 class="card-title">Interactive Timelines</h5>
+                    <p class="card-text">Experience history like never before with our interactive storytelling approach. Narratives come to life through multimedia, giving you a deeper connection to the past. Whether it's visual or auditory, we bring the past to your present.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://th.bing.com/th/id/R.63d6c5a344336de3053f811282e2090b?rik=elmdfF1JH9YUOw&riu=http%3a%2f%2fwww.lodgeseshat.nl%2fwp-content%2fuploads%2f2023%2f10%2fhistory-featured-image.jpg&ehk=P%2fOf6gBi8ZWKbDI9WJyK36q9Xy29cQ2zHrkUdbAGQKo%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="Feature 2">
+                <div class="card-body">
+                    <h5 class="card-title">Engaging Quizzes</h5>
+                    <p class="card-text">Test your knowledge with quizzes and learn more about history.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://th.bing.com/th/id/R.63d6c5a344336de3053f811282e2090b?rik=elmdfF1JH9YUOw&riu=http%3a%2f%2fwww.lodgeseshat.nl%2fwp-content%2fuploads%2f2023%2f10%2fhistory-featured-image.jpg&ehk=P%2fOf6gBi8ZWKbDI9WJyK36q9Xy29cQ2zHrkUdbAGQKo%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="Feature 3">
+                <div class="card-body">
+                    <h5 class="card-title">Multimedia Stories</h5>
+                    <p class="card-text">Watch immersive stories with videos, sound, and animations.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<section>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col custom-left-card">
-        <div class="card custom-card h-100">
-          <img src="https://th.bing.com/th/id/R.63d6c5a344336de3053f811282e2090b?rik=elmdfF1JH9YUOw&riu=http%3a%2f%2fwww.lodgeseshat.nl%2fwp-content%2fuploads%2f2023%2f10%2fhistory-featured-image.jpg&ehk=P%2fOf6gBi8ZWKbDI9WJyK36q9Xy29cQ2zHrkUdbAGQKo%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card custom-card h-100">
-          <img src="https://th.bing.com/th/id/R.63d6c5a344336de3053f811282e2090b?rik=elmdfF1JH9YUOw&riu=http%3a%2f%2fwww.lodgeseshat.nl%2fwp-content%2fuploads%2f2023%2f10%2fhistory-featured-image.jpg&ehk=P%2fOf6gBi8ZWKbDI9WJyK36q9Xy29cQ2zHrkUdbAGQKo%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card custom-card h-100">
-          <img src="https://th.bing.com/th/id/R.63d6c5a344336de3053f811282e2090b?rik=elmdfF1JH9YUOw&riu=http%3a%2f%2fwww.lodgeseshat.nl%2fwp-content%2fuploads%2f2023%2f10%2fhistory-featured-image.jpg&ehk=P%2fOf6gBi8ZWKbDI9WJyK36q9Xy29cQ2zHrkUdbAGQKo%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-<script>
-</script>
+<!-- Hero Section -->
+<div class="hero-section text-center bg-primary text-white py-5">
+    <h1>Experience History Like Never Before</h1>
+    <p>Step into the past and explore captivating historical stories through interactive mediums.</p>
+    <a href="#cards" class="btn btn-light btn-lg">Start Your Journey</a>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4" id="contact">
+    <p>&copy; 2025 Immersive History. All Rights Reserved.</p>
+    <p>By Hacktroverts</p>
+</footer>
 
 {% endblock %}

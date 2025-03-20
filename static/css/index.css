@@ -87,6 +87,12 @@
     left: 0;
 }
 
+.carousel-item img {
+    width: 100%; /* Ensures the image stretches across the container width */
+    height: 600px; /* Adjusts the height of the image */
+    object-fit: cover; /* Ensures the image covers the container while maintaining its aspect ratio */
+}
+
 .slide-image {
     width: 100%;  /* Cover the full width */
     height: 100%; /* Cover the full height */
@@ -113,7 +119,13 @@
     }
 }
 
+
 /* Custom Styling for Cards */
+.card {
+    min-height: 350px; /* Increases the card height */
+    margin-bottom: 20px; /* Adds space between cards */
+}
+
 .custom-card {
     border: none;
     border-radius: 15px;
@@ -165,4 +177,20 @@
     .custom-left-card {
         padding-left: 0;
     }
+}
+
+.hero-section {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    color: white;
+}
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
 }
