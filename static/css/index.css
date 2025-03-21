@@ -128,6 +128,31 @@ body {
     }
 }
 
+.welcome-title {
+    font-size: 3rem; /* Large text size */
+    font-weight: bold; /* Bold text */
+    color: #8A5D3B; /* Warm, brownish tone */
+    text-align: center; /* Centered text */
+    margin-top: 120px; /* Space from the top */
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for dramatic effect */
+    letter-spacing: 3px; /* Slightly spread out letters for added elegance */
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
+    text-transform: uppercase; /* Make the text uppercase */
+    margin-bottom: 40px;
+  }
+  
+  /* Keyframe animation for fading in */
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+
 /* Custom Styling for Cards */
 .card {
     min-height: 350px;
@@ -149,10 +174,22 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.custom-card .card-img-top {
-    border-radius: 15px 15px 0 0;
-    object-fit: cover;
-    height: 200px;
+#cards .card {
+    min-height: 350px;
+    margin-bottom: 20px;
+}
+
+#cards .card .card-img-top {
+    width: 100%; /* Ensure the image takes up the full width of the card */
+    height: 200px; /* Fix the height for consistency */
+    object-fit: cover; /* Ensure the image covers the area and doesn't get stretched */
+}
+
+/* Optional: if you want to set the height and width explicitly on parent element too */
+.custom-card .card-img-top-wrapper {
+    width: 100%;   /* Full width */
+    height: 100px; /* Fixed height */
+    overflow: hidden; /* Ensures the image doesn't overflow */
 }
 
 .custom-card .card-body {
@@ -194,7 +231,7 @@ body {
     background-color: #3e2723 !important;  /* Dark Chestnut Brown */
 }
 
-/* Hero Section Styling */
+
 .hero-section {
     background-image: url('hero-background.jpg');
     background-size: cover;
@@ -213,6 +250,107 @@ body {
     font-size: 1.25rem;
     margin-bottom: 20px;
 }
+  
+  /* Primary Button */
+  .hero-section .btn-light {
+    margin: 15px 10px;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #E8D8B7;
+    color: #3E3B31;
+    border: 2px solid #E8D8B7;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .hero-section .btn-light:hover {
+    background-color: #8A5D3B;
+    color: white;
+    border-color: #8A5D3B;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Secondary Button */
+  .hero-section .btn-outline-light {
+    margin: 15px 10px;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid #E8D8B7;
+    color: #E8D8B7;
+    background-color: transparent;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .hero-section .btn-outline-light:hover {
+    background-color: #E8D8B7;
+    color: #3E3B31;
+    border-color: #8A5D3B;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Search Bar */
+  .hero-section .search-bar input {
+    width: 300px;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: 2px solid #C1A182;
+    background-color: #FFF8E1;
+    color: #3E3B31;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;
+  }
+  
+  .hero-section .search-bar input:focus {
+    border-color: #8A5D3B;
+  }
+  
+  /* Social Media Links */
+  .hero-section .social-links a {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .hero-section .social-links a:hover {
+    color: #E8D8B7; /* Hover effect color */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-section h3 {
+      font-size: 1.2rem;
+    }
+  
+    .hero-section .btn-light,
+    .hero-section .btn-outline-light {
+      padding: 12px 30px;
+      font-size: 1rem;
+    }
+  
+    .hero-section .search-bar input {
+      width: 80%;
+    }
+  }
 
 /* marquee */
 .row-service-wrap {
@@ -307,3 +445,20 @@ body {
     max-width: 100%;
     vertical-align: middle;
   }
+
+/* Social Media Icons Styling in Footer */
+footer .social-links {
+    margin-top: 20px;
+}
+
+footer .social-icon {
+    color: #FFF8E1; /* Light color for icons */
+    font-size: 1.5rem; /* Size of icons */
+    transition: color 0.3s ease;
+}
+
+footer .social-icon:hover {
+    color: #E8D8B7; /* Hover effect for icons */
+    transform: translateY(-3px);
+}
+
