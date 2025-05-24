@@ -133,12 +133,12 @@ body {
     font-weight: bold; /* Bold text */
     color: #8A5D3B; /* Warm, brownish tone */
     text-align: center; /* Centered text */
-    margin-top: 120px; /* Space from the top */
+    margin-top: 80px; /* Space from the top */
     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow for dramatic effect */
     letter-spacing: 3px; /* Slightly spread out letters for added elegance */
     animation: fadeIn 1.5s ease-in-out; /* Fade-in effect */
     text-transform: uppercase; /* Make the text uppercase */
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
   
   /* Keyframe animation for fading in */
@@ -162,27 +162,40 @@ body {
 .custom-card {
     border: none;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 85%;
-    margin: 20px auto 0;
-    background-color: #d7ccc8 !important; /* Light Tan for card background */
+    margin: 0 auto 30px auto; /* Center card and add bottom margin */
+    background-color: #FDF5E6; /* Old Lace for card background */
+    border: 1px solid #A0522D; /* Sienna for border */
+}
+
+@media (min-width: 992px) { /* Apply to md screens and up */
+    .custom-card {
+        width: 90%; /* Adjust width as needed */
+        margin: 0 auto 30px auto; /* Maintain horizontal centering and bottom margin */
+    }
 }
 
 .custom-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 #cards .card {
     min-height: 350px;
-    margin-bottom: 20px;
+    /* margin-bottom is now handled by .custom-card or its media queries */
+}
+
+#cards .row {
+    padding-top: 20px;
 }
 
 #cards .card .card-img-top {
     width: 100%; /* Ensure the image takes up the full width of the card */
     height: 200px; /* Fix the height for consistency */
     object-fit: cover; /* Ensure the image covers the area and doesn't get stretched */
+    border: 2px solid #C1A182; /* Light, earthy tan for image border */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for image */
 }
 
 /* Optional: if you want to set the height and width explicitly on parent element too */
@@ -200,13 +213,13 @@ body {
 .custom-card .card-title {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #3e2723 !important; /* Dark Chestnut for historical richness */
+    color: #5D4037 !important; /* Dark, earthy brown for card title */
     margin-bottom: 10px;
 }
 
 .custom-card .card-text {
     font-size: 1rem;
-    color: #4b3f72 !important; /* Dark brown for text */
+    color: #4E342E !important; /* Another dark brown for card text */
     line-height: 1.5;
 }
 
@@ -217,8 +230,8 @@ body {
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
     .custom-card {
-        margin-bottom: 20px;
         width: 100%;
+        margin: 0 auto 30px auto; /* Ensure bottom margin is consistent */
     }
 
     .custom-left-card {
