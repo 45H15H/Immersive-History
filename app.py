@@ -56,7 +56,7 @@ app = Flask(__name__)
 
 def generate_story(prompt):
     response = gemini_client.models.generate_content(
-    model="gemini-3.8-flash",
+    model="gemini-3.6-flash",
     config=types.GenerateContentConfig(system_instruction=story_instruct),
     contents=[prompt]
     )
@@ -149,7 +149,7 @@ don't use ```json, just return the raw JSON object.
 """
 def generate_quiz(topic):
     response = gemini_client.models.generate_content(
-    model="gemini-3.8-flash",
+    model="gemini-3.6-flash",
     config=types.GenerateContentConfig(system_instruction=quiz_instruct),
     contents=[topic]
     )
@@ -197,7 +197,7 @@ def generate_chat_response(user_input):
     chat_history.append(Content(parts=[{"text": user_input}], role="user"))
 
     response = gemini_client.models.generate_content(
-        model="gemini-3.8-flash",
+        model="gemini-3.6-flash",
         config=types.GenerateContentConfig(system_instruction=chat_instruct),
         contents=chat_history
     )
@@ -227,7 +227,7 @@ don't use ( and ) in the mermaid code. As it is wrong syntax.
 
 def generate_flowchart(topic):
     response = gemini_client.models.generate_content(
-        model="gemini-3.8-flash",
+        model="gemini-3.6-flash",
         config=types.GenerateContentConfig(system_instruction=flowchart_instruct),
         contents=[topic]
     )
